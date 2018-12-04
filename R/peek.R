@@ -9,7 +9,8 @@
 #' @export
 peek <- function(.data, view = TRUE, print = FALSE) {
   if (view) {
-    View(.data)
+    RStudioView <- as.environment("package:utils")$View
+    RStudioView(.data)
   }
   if (print) {
     print(.data)
