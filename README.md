@@ -13,6 +13,8 @@ devtools::install_github("davidklaing/peek")
 Say you've written a long chain of piped commands, like the one below:
 
 ``` r
+library(tidyverse)
+
 mtcars %>% 
   filter(carb != 8) %>% 
   select(carb, mpg, cyl, hp, drat) %>% 
@@ -24,6 +26,8 @@ mtcars %>%
 To see what's being passed from `summarise()` to `mutate()` without changing anything about your chain's behavior, insert `peek() %>%` after `summarise()`, like so:
 
 ``` r
+library(peek)
+
 mtcars %>% 
   filter(carb != 8) %>% 
   select(carb, mpg, cyl, hp, drat) %>% 
