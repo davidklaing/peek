@@ -13,7 +13,7 @@ devtools::install_github("davidklaing/peek")
 Say you've written a long chain of piped commands, like the one below:
 
 ``` r
-library(tidyverse)
+library(dplyr)
 
 mtcars %>% 
   filter(carb != 8) %>% 
