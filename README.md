@@ -23,7 +23,7 @@ mtcars %>%
   mutate(min_mpg_100 = min_mpg*100)
 ```
 
-To see what's being passed from `summarise()` to `mutate()` without changing anything about your chain's behavior, insert `peek() %>%` after `summarise()`, like so:
+To invoke Rstudio's data viewer and see what's being passed from `summarise()` to `mutate()` without changing anything about your chain's behavior, insert `pview() %>%` after `summarise()`, like so:
 
 ``` r
 library(peek)
@@ -39,4 +39,4 @@ mtcars %>%
 
 By default, `peek()` will call RStudio's `View()` function, which opens a new window and allows you to explore the object.
 
-If you would rather `print()` the object than `View()` it, use `peek(view = FALSE, print = TRUE)`. And if you'd like to print *and* view it, use `peek(view = TRUE, print = TRUE)`.
+If you would rather `print()` the object than `View()` it, use `pprint()`.
