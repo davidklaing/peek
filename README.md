@@ -1,6 +1,6 @@
 # peek
 
-`peek` is a tiny R package with just one function — `peek()` — which is for viewing the state of a chain of piped commands without otherwise altering the chain's behavior.
+`peek` is a tiny R package with just two functions — `pview()` and `pview()` — which are for viewing the state of a chain of piped commands without otherwise altering the chain's behavior. I use it to help myself debug and refactor my tidyverse code.
 
 ## Installation
 
