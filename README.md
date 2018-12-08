@@ -33,10 +33,8 @@ mtcars %>%
   select(carb, mpg, cyl, hp, drat) %>% 
   group_by(carb) %>% 
   summarise(min_mpg = min(mpg)) %>%
-  peek() %>%
+  pview() %>%
   mutate(min_mpg_100 = min_mpg*100)
 ```
-
-By default, `peek()` will call RStudio's `View()` function, which opens a new window and allows you to explore the object.
 
 If you would rather `print()` the object than `View()` it, use `pprint()`.
