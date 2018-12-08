@@ -1,19 +1,42 @@
-#' Take a peek at an object and then return it.
+#' View an object and then return it.
 #'
-#' @param .data An R object that you want to see. Usually a matrix-like object,
-#'   such as a dataframe, matrix, or list.
-#' @param view Whether to invoke a spreadsheet-style data viewer on `.data`.
-#' @param print Whether to print `.data`.
+#' @param .data Any R object.
 #'
-#' @return `.data`, after having viewed or printed it.
+#' @return \code{.data}, after having viewed it.
+#' @examples
+#' library(dplyr)
+#' mtcars %>%
+#'   filter(carb != 8) %>%
+#'   select(carb, mpg, cyl, hp, drat) %>%
+#'   group_by(carb) %>%
+#'   summarise(min_mpg = min(mpg)) %>%
+#'   pview() %>% # View the current state, then pass it to the next command.
+#'   mutate(min_mpg_100 = min_mpg*100)
+#'
 #' @export
-peek <- function(.data, view = TRUE, print = FALSE) {
-  if (view) {
-    RStudioView <- as.environment("package:utils")$View
-    RStudioView(.data)
-  }
-  if (print) {
-    print(.data)
-  }
+pview <- function(.data) {
+  RStudioView <- as.environment("package:utils")$View
+  RStudioView(.data)
+  return(.data)
+}
+
+#' Print an object and then return it.
+#'
+#' @param .data Any R object.
+#'
+#' @return \code{.data}, after having printed it.
+#' @examples
+#' library(dplyr)
+#' mtcars %>%
+#'   filter(carb != 8) %>%
+#'   select(carb, mpg, cyl, hp, drat) %>%
+#'   group_by(carb) %>%
+#'   summarise(min_mpg = min(mpg)) %>%
+#'   pprint() %>% # Print the current state, then pass it to the next command.
+#'   mutate(min_mpg_100 = min_mpg*100)
+#'
+#' @export
+pprint <- function(.data) {
+  print(.data)
   return(.data)
 }
