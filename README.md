@@ -23,7 +23,7 @@ mtcars %>%
   mutate(min_mpg_100 = min_mpg*100)
 ```
 
-To invoke Rstudio's data viewer and see what's being passed from `summarise()` to `mutate()` without changing anything about your chain's behavior, insert `pview() %>%` after the call to `summarise()`, like so:
+To invoke RStudio's data viewer and see what's being passed from `summarise()` to `mutate()` without changing anything about your chain's behavior, insert `pview() %>%` after the call to `summarise()`, like so:
 
 ``` r
 library(peek)
