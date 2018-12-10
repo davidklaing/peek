@@ -26,6 +26,7 @@ mtcars %>%
 To invoke RStudio's data viewer and see what's being passed from `summarise()` to `mutate()` without changing anything about your chain's behavior, insert `pview() %>%` after the call to `summarise()`, like so:
 
 ``` r
+library(dplyr)
 library(peek)
 
 mtcars %>% 
